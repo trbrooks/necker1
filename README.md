@@ -1,6 +1,6 @@
 # Affordances in bistable perception of images
 
-PYTHON FILES
+**PYTHON FILES**
 
 cong = congruent condition
 
@@ -10,7 +10,11 @@ tr = training phase
 
 te = test phase
 
-R Files
+**DATA FILES**
+
+In necker_csv_data
+
+**R Files**
 
 py-to-R7.R uses .csv files to create an r data object
 
