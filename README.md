@@ -16,11 +16,11 @@ Thus, "incong_te.py" is the incongruent condition of the test phase of the exper
 
 "necker_csv_data.zip" contains the raw data collected by the PsychoPy2 programs.
 
-Or you can use dataframe.RDA, an R object, and avoid having to use py-to-R7.R
+Or you can use dataframe.RDA, an R object, and avoid having to use py-to-R6.R
 
 **R Files**
 
-"py-to-R7.R" uses .csv files to create an R data object. Creates an R object called "df1" from necker_csv_data. Or you can just use dataframe.RDA (see below).
+"py-to-R6.R" uses .csv files to create an R data object. Creates an R object called "df1" from necker_csv_data. Or you can just use dataframe.RDA (see below).
 
 dataframe.Rda is a dataframe of all data. Load it into an R object called "df1" to run anaylses and generate figures.
 
