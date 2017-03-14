@@ -14,7 +14,7 @@ Thus, "incong_te.py" is the incongruent condition of the test phase of the exper
 
 **DATA FILES**
 
-In necker_csv_data
+"necker_csv_data.csv" contains the raw data collected by the PsychoPy2 programs.
 
 Or you can use dataframe.RDA, an R object, and avoid having to use py-to-R7.R
 
