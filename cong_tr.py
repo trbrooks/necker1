@@ -55,12 +55,7 @@ else:
 # Initialize components for Routine "trial"
 trialClock = core.Clock()
 ISI = core.StaticPeriod(win=win, screenHz=expInfo['frameRate'], name='ISI')
-hexa = visual.ImageStim(win=win, name='hexa',units='pix', 
-    image='/Users/trbrooks/Documents/necker/images/hex.png', mask=None,
-    ori=0, pos=[0, 0], size=[120,108],
-    color=[1,1,1], colorSpace='rgb', opacity=1,
-    flipHoriz=False, flipVert=False,
-    texRes=128, interpolate=True, depth=-1.0)
+
 cross = visual.ImageStim(win=win, name='cross',units='pix', 
     image='/Users/trbrooks/Documents/necker/images/cross.png', mask=None,
     ori=0, pos=[0, 0], size=[30,30],
@@ -151,15 +146,6 @@ while continueRoutine and routineTimer.getTime() > 0:
     if trialClock.getTime() > switch:
         switch=i.next()
         whichcube= not whichcube
-
-    # *hexa* updates
-#    if t >= 0.0 and hexa.status == NOT_STARTED:
-#        # keep track of start time/frame for later
-#        hexa.tStart = t  # underestimates by a little under one frame
-#        hexa.frameNStart = frameN  # exact frame index
-#        hexa.setAutoDraw(True)
-#    elif hexa.status == STARTED and t >= (0.0 + (150-win.monitorFramePeriod*0.75)): #most of one frame period left
-#        hexa.setAutoDraw(False)
     
     # *downy1* updates
     if t >= 0.0 and downy1.status == NOT_STARTED:
