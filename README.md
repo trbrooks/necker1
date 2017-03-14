@@ -20,12 +20,15 @@ Or you can use dataframe.RDA, an R object, and avoid having to use py-to-R7.R
 
 **R Files**
 
-py-to-R7.R uses .csv files to create an R data object. Creates dataframe.RDA from necker_csv_data. Or you can just use dataframe.RDA
+"py-to-R7.R" uses .csv files to create an R data object. Creates an R object called "df1" from necker_csv_data. Or you can just use dataframe.RDA (see below).
 
-necker_analyses_figures.R uses the resulting data object to generate all plots and analyses.
+dataframe.Rda is a dataframe of all data. Load it into an R object called "df1" to run anaylses and generate figures.
 
-dataframe.R is a dataframe of all data. Load it into an R object called "df1" to run anaylses and generate figures.
+necker_analyses_figures.R uses the dataframe df1 to generate all plots and analyses.
+
 
 **PNG Files**
 
 These images are used by the PsychoPy2 program to create the display.
+
+"downcube.png" is the disambiguated cube, which can be displayed in either direction.
