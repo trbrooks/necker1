@@ -32,5 +32,7 @@ necker_analyses_figures.R uses the dataframe df1 to generate all plots and analy
 These images are used by the PsychoPy2 program to create the display.
 
 "downcube.png" is the disambiguated cube, which is displayed both as-is and rotated 180 degrees.
+
 "cross.png" is the cross at the center of the target cube, which participants are instructed to gaze at.
+
 "necker_cube.png" is the classic Necker cube which is used only in the test phase of the experiment.
