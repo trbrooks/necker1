@@ -56,37 +56,37 @@ else:
 trialClock = core.Clock()
 ISI = core.StaticPeriod(win=win, screenHz=expInfo['frameRate'], name='ISI')
 hexa = visual.ImageStim(win=win, name='hexa',units='pix', 
-    image='/Users/trbrooks/Desktop/Spring 2016/necker/images/hex.png', mask=None,
+    image='/Users/trbrooks/Documents/necker/images/hex.png', mask=None,
     ori=0, pos=[0, 0], size=[120,108],
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
     texRes=128, interpolate=True, depth=-1.0)
 cross = visual.ImageStim(win=win, name='cross',units='pix', 
-    image='/Users/trbrooks/Desktop/Spring 2016/necker/images/cross.png', mask=None,
+    image='/Users/trbrooks/Documents/necker/images/cross.png', mask=None,
     ori=0, pos=[0, 0], size=[30,30],
     color=[1,1,1], colorSpace='rgb', opacity=0.9,
     flipHoriz=False, flipVert=False,
     texRes=128, interpolate=True, depth=-1.0)
 downy1 = visual.ImageStim(win=win, name='downy1',units=u'pix', 
-    image=u'/Users/trbrooks/Desktop/Spring 2016/necker/images/downcube.png', mask=None,
+    image=u'/Users/trbrooks/Documents/necker/images/downcube.png', mask=None,
     ori=0, pos=[0, 0], size=[120,108],
     color=[1,1,1], colorSpace=u'rgb', opacity=1.0,
     flipHoriz=False, flipVert=False,
     texRes=128, interpolate=True, depth=-2.0)
 downy2 = visual.ImageStim(win=win, name='downy2',units=u'pix', 
-    image=u'/Users/trbrooks/Desktop/Spring 2016/necker/images/downcube.png', mask=None,
+    image=u'/Users/trbrooks/Documents/necker/images/downcube.png', mask=None,
     ori=0, pos=[0, 0], size=[360,324],
     color=[1,1,1], colorSpace=u'rgb', opacity=1.0,
     flipHoriz=False, flipVert=False,
     texRes=128, interpolate=True, depth=-2.0)
 upy = visual.ImageStim(win=win, name='upy',units=u'pix', 
-    image=u'/Users/trbrooks/Desktop/Spring 2016/necker/images/downcube.png', mask=None,
+    image=u'/Users/trbrooks/Documents/necker/images/downcube.png', mask=None,
     ori=0, pos=[0,0], size=[120,108],
     color=[1,1,1], colorSpace=u'rgb', opacity=1.0,
     flipHoriz=True, flipVert=True,
     texRes=128, interpolate=True, depth=-3.0)
 upy2 = visual.ImageStim(win=win, name='upy2',units=u'pix', 
-    image=u'/Users/trbrooks/Desktop/Spring 2016/necker/images/downcube.png', mask=None,
+    image=u'/Users/trbrooks/Documents/necker/images/downcube.png', mask=None,
     ori=0, pos=[0,0], size=[360,324],
     color=[1,1,1], colorSpace=u'rgb', opacity=1.0,
     flipHoriz=True, flipVert=True,
