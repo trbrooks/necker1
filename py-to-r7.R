@@ -2,7 +2,7 @@
 ## Un-nests psychopy data so it can be analyzed in R
 
 getwd()
-setwd("/Users/trbrooks/documents/past semesters/spring 2016/necker/data directory/necker_round2/data")
+setwd("/Users/trbrooks/Documents/necker/data directory/data")
 dir()->file.names
 grep("csv", file.names)->temp
 file.names[temp]->pydata1
