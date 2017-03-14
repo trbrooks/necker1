@@ -19,3 +19,7 @@ In necker_csv_data
 py-to-R7.R uses .csv files to create an R data object
 
 necker_all_3.R uses the resulting data object to generate all plots and analyses.
+
+**PNG Files**
+
+These images are used by the PsychoPy2 program to create the display.
