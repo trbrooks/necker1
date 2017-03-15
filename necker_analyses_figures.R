@@ -522,3 +522,96 @@ mod1 <- manova(cbind(alpha,beta) ~ iscong, data=marko_all)
 summary(mod1, test="Wilks")
 summary(mod1)
 }
+
+           
+           
+# GCM for Necker
+
+setwd("/Users/trbrooks/Documents/Past Semesters/Spring 2016/necker/datadirectory/necker_round1")
+
+
+x <- subset(df1, istest==1)
+x$cstate[which(x$iscong==0)] <- abs(x$cstate[which(x$iscong==0)]-1)
+x$time2 <- round(x$ctime/0.05)*0.05
+unik <- by(x$time2, x$trial, FUN = function(x) !duplicated(x))
+unik <- unlist(unik, recursive = T, use.names=F)
+tmp  <- seq_along(x$time2)[unik]
+x <- x[tmp,]
+rownames(x) <- 1:nrow(x)
+
+# create walk variable
+temp <- by(x$change, x$trial, FUN = cumsum, simplify = F)
+temp <- unlist(temp, recursive = T, use.names=F)
+x$cumu <- temp
+x$rand <- (x$cstate-0.5)*2
+temp <- by(x$rand, x$trial, FUN = cumsum, simplify = T)
+x$walk <- unlist(temp, recursive = T, use.names=F)
+
+
+# create the "skeleton" of a person-level format file.
+
+# int <- by(x, list(x$participant, x$iscong), 
+#    function(data) coefficients(lm(walk ~ time2, data = data))[[1]])
+# as.numeric((names(int)))->id
+# int <- unlist(int)
+# cbind(id,int)->tmp.int
+# colnames(tmp.int)<-c("int0","int1")
+# summary(tmp.int)
+# 
+
+#x2<-x[order(x$participant),]
+# print(x2)
+# x2[1,]
+# summary(x2)
+# rate <- by(x2, list(x2$participant, x2$iscong), 
+#           function(data) coefficients(lm(x$walk ~ x$time2, data = data))[[2]])
+# rate <- unlist(rate)
+# names(rate) <- NULL
+# cbind(id,rate)->tmp.rate
+# colnames(tmp.rate)<-c("rate0","rate1")
+# summary(tmp.rate) 
+# 
+# rsq <- by(x2, list(x2$participant, x2$iscong), 
+#           function(data) summary(lm(x$walk ~ x$time2, data = data))$r.squared)
+# rate <- unlist(rsq)
+# names(rsq) <- NULL
+# cbind(id, rsq)->tmp.rsq
+# colnames(tmp.rsq)<-c("rsq0","rsq1")
+# summary(tmp.rsq)
+# 
+# 
+# cbind(tmp.int,tmp.rate,tmp.rsq)->tmp
+# 
+# library(ggplot2)
+# summary(tmp)
+# histogram(tmp[,1])
+# tmp
+
+x$timeq <- x$time2^2
+x$time_cu <- x$time2^3
+
+# Build the gcm models
+library(lme4)
+gcm1<-lmer(walk ~ time2 * iscong + (1 + time2|participant), data=x)
+summary(gcm1)
+gcm2<-lmer(walk ~ time2 * iscong + timeq + (1 + time2|participant), data=x)
+summary(gcm2)
+gcm3<-lmer(walk ~ iscong:time2 + time2 + timeq + timeq:iscong + (1 + time2|participant), data=x)
+summary(gcm3)
+gcm4 <- lmer(walk ~ -1 + iscong:time2 + time2 + timeq + timeq:iscong + (1 + time2|participant), data=x)
+summary(gcm4)
+
+
+gcm5<-lmer(walk ~ time2 + timeq + iscong:time2 + (1 + time2|participant), data=x)
+summary(gcm5)
+gcm6<-lmer(walk ~ -1 + time2 + timeq + iscong:time2 + (1 + time2|participant), data=x)
+summary(gcm6)
+
+
+anova(gcm1, gcm2)
+anova(gcm2, gcm3)
+anova(gcm4, gcm5)
+anova(gcm3, gcm5)
+anova(gcm3,gcm4)
+anova(gcm4,gcm6)
+
